@@ -143,7 +143,6 @@ export class W3mVerificationForm extends LitElement {
               @keydown=${(e: KeyboardEvent) => {
                 this.handleKeydown(e, index)
               }}
-              @focus=${this.handleFocus}
               id=${index}
               data-id=${index}
               class=${`item ${this.status}`}

@@ -7,6 +7,12 @@
   margin: 0 5px;
 }
 
+.w3m-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 .w3m-info-container {
   display: flex;
   flex-direction: column;

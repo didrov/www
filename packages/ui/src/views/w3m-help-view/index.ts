@@ -1,5 +1,5 @@
 import { ConfigCtrl, CoreUtil, RouterCtrl } from '@web3modal/core'
-import { html, LitElement } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { SvgUtil } from '../../utils/SvgUtil'
 import { ThemeUtil } from '../../utils/ThemeUtil'
@@ -19,6 +19,10 @@ export class W3mHelpView extends LitElement {
     } else {
       UiUtil.openWalletExplorerUrl()
     }
+  }
+
+  private onLogin() {
+    RouterCtrl.push('Login')
   }
 
   private onLearnMore() {
@@ -70,6 +74,9 @@ export class W3mHelpView extends LitElement {
           >
             Learn More
           </w3m-button>
+        </div>
+        <div class="w3m-login">
+          <w3m-button .onClick=${this.onLogin.bind(this)}> Login with email </w3m-button>
         </div>
       </w3m-modal-content>
     `

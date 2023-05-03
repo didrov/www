@@ -29,7 +29,7 @@ export class W3mModalBackcard extends LitElement {
   private readonly unsubscribeRouter?: () => void = undefined
 
   private onHelp() {
-    RouterCtrl.push('Login')
+    RouterCtrl.push('Help')
   }
 
   private logoTemplate() {
