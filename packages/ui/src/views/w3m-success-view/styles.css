@@ -1,0 +1,20 @@
+w3m-text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tagline {
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+w3m-button {
+  margin-top: 24px;
+  margin-bottom: 38px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}

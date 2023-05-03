@@ -84,6 +84,12 @@ export class W3mModalRouter extends LitElement {
         return html`<w3m-switch-network-view></w3m-switch-network-view>`
       case 'InstallWallet':
         return html`<w3m-install-wallet-view></w3m-install-wallet-view>`
+      case 'Login':
+        return html`<w3m-login-view></w3m-login-view>`
+      case 'Verification':
+        return html`<w3m-verification-view></w3m-verification-view>`
+      case 'Success':
+        return html`<w3m-success-view></w3m-success-view>`
       default:
         return html`<div>Not Found</div>`
     }

@@ -1,0 +1,9 @@
+w3m-text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tagline {
+  margin-top: 5px;
+}

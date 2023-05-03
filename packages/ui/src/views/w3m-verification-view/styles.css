@@ -1,0 +1,18 @@
+w3m-text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tagline {
+  margin-top: 5px;
+}
+
+.highlight {
+  color: var(--w3m-background-color);
+  cursor: pointer;
+}
+
+.retry {
+  margin: 24px 0px;
+}

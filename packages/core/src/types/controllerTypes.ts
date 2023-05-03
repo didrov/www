@@ -142,11 +142,14 @@ export type RouterView =
   | 'Help'
   | 'InjectedConnecting'
   | 'InstallWallet'
+  | 'Login'
   | 'MobileConnecting'
   | 'MobileQrcodeConnecting'
   | 'Qrcode'
   | 'SelectNetwork'
+  | 'Success'
   | 'SwitchNetwork'
+  | 'Verification'
   | 'WalletExplorer'
   | 'WebConnecting'
 
@@ -300,4 +303,8 @@ export interface EventsCtrlState {
   userSessionId: string
   events: ModalEvent[]
   connectedWalletId?: string
+}
+
+export interface VerificationCtrlState {
+  email?: string
 }

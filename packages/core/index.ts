@@ -8,6 +8,7 @@ export { OptionsCtrl } from './src/controllers/OptionsCtrl'
 export { RouterCtrl } from './src/controllers/RouterCtrl'
 export { ThemeCtrl } from './src/controllers/ThemeCtrl'
 export { ToastCtrl } from './src/controllers/ToastCtrl'
+export { VerificationCtrl } from './src/controllers/VerificationCtrl'
 export { WcConnectionCtrl } from './src/controllers/WcConnectionCtrl'
 export type {
   ConfigCtrlState,
@@ -18,6 +19,7 @@ export type {
   RouterView,
   SwitchNetworkData,
   ThemeCtrlState,
+  VerificationCtrlState,
   WalletData
 } from './src/types/controllerTypes'
 export { CoreUtil } from './src/utils/CoreUtil'
