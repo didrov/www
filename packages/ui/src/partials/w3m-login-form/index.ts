@@ -1,4 +1,8 @@
-import { RouterCtrl, VerificationCtrl } from '@web3modal/core'
+import { ClientCtrl, RouterCtrl, VerificationCtrl } from '@web3modal/core'
+import {
+  WEB3ACCOUNT_CONNECTOR_ID,
+  Web3AccountConnector
+} from '@web3modal/ethereum/src/web3accountConnector'
 import { LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
@@ -18,8 +22,14 @@ export class W3mForm extends LitElement {
     this.validateMail()
 
     if (this.valid) {
-      VerificationCtrl.setEmail(this.email)
-      RouterCtrl.push('Verification')
+      ;(async () => {
+        const connector = ClientCtrl.client().getConnectorById(
+          WEB3ACCOUNT_CONNECTOR_ID
+        ) as Web3AccountConnector
+        await connector.sendEmailVerification(this.email)
+        VerificationCtrl.setEmail(this.email)
+        RouterCtrl.push('Verification')
+      })()
     }
   }
 

@@ -1,9 +1,12 @@
-import { RouterCtrl, ToastCtrl } from '@web3modal/core'
+import { ClientCtrl, ModalCtrl, ToastCtrl } from '@web3modal/core'
+import {
+  WEB3ACCOUNT_CONNECTOR_ID,
+  Web3AccountConnector
+} from '@web3modal/ethereum/src/web3accountConnector'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ThemeUtil } from '../../utils/ThemeUtil'
 import styles from './styles.css'
-const code = '645356'
 
 @customElement('w3m-verification-form')
 export class W3mVerificationForm extends LitElement {
@@ -62,13 +65,24 @@ export class W3mVerificationForm extends LitElement {
 
     const canTest = this.inputs.every(isNotEmpty)
     if (canTest) {
-      const string = this.inputs.join('')
-      if (string === code) {
-        RouterCtrl.push('Success')
-      } else {
-        ToastCtrl.openToast('Code invalid', 'error')
-        this.status = 'error'
-      }
+      const code = this.inputs.join('')
+
+      ;(async () => {
+        // const { selectedChain } = OptionsCtrl.state
+        // await ClientCtrl.client().connectConnector(id, selectedChain?.id)
+        const connector = ClientCtrl.client().getConnectorById(
+          WEB3ACCOUNT_CONNECTOR_ID
+        ) as Web3AccountConnector
+        const verified = await connector.verifyEmail(code)
+
+        if (verified) {
+          // RouterCtrl.push('Success')
+          ModalCtrl.close()
+        } else {
+          ToastCtrl.openToast('Code invalid', 'error')
+          this.status = 'error'
+        }
+      })()
     }
   }
 

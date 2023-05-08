@@ -11,7 +11,7 @@ export class W3mVerificationView extends LitElement {
   // -- render ------------------------------------------------------- //
   protected render() {
     return html`<w3m-modal-header border=${true} title="Login with email"></w3m-modal-header>
-      <w3m-text variant="medium-regular">Enter the verification code (645356)</w3m-text>
+      <w3m-text variant="medium-regular">Enter the verification code</w3m-text>
       <w3m-text class="tagline" variant="small-regular" color="secondary"
         >Code sent to ${VerificationCtrl.state.email}</w3m-text
       >
