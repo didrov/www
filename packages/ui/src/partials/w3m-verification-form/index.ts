@@ -1,10 +1,8 @@
-import { RouterCtrl, ToastCtrl } from '@web3modal/core'
+import { RouterCtrl, VerificationCtrl, supabase } from '@web3modal/core'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ThemeUtil } from '../../utils/ThemeUtil'
 import styles from './styles.css'
-const code = '645356'
-
 @customElement('w3m-verification-form')
 export class W3mVerificationForm extends LitElement {
   public static styles = [ThemeUtil.globalCss, styles]
@@ -55,19 +53,23 @@ export class W3mVerificationForm extends LitElement {
     }
   }
 
-  private validate() {
+  private async validate() {
     function isNotEmpty(currentValue: string) {
       return currentValue !== ''
     }
 
     const canTest = this.inputs.every(isNotEmpty)
     if (canTest) {
-      const string = this.inputs.join('')
-      if (string === code) {
-        RouterCtrl.push('Success')
-      } else {
-        ToastCtrl.openToast('Code invalid', 'error')
+      const token = this.inputs.join('')
+      const { data, error } = await supabase.auth.verifyOtp({
+        email: VerificationCtrl.state.email,
+        token,
+        type: 'email'
+      })
+      if (error) {
         this.status = 'error'
+      } else if (data.session && data.user) {
+        RouterCtrl.push('Success')
       }
     }
   }

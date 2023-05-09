@@ -37,4 +37,5 @@ input:focus {
   text-transform: var(--w3m-text-small-regular-text-transform);
   color: #f05142;
   margin-top: 4px;
+  width: 240px;
 }

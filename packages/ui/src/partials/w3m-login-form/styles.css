@@ -10,3 +10,19 @@
 .wrapper--button {
   margin-bottom: 38px;
 }
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  color: var(--w3m-color-fg-3);
+  fill: var(--w3m-background-color);
+  animation: spin 1s linear infinite;
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}

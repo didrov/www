@@ -44,7 +44,7 @@ export const ModalCtrl = {
       } else if (enableNetworkView) {
         RouterCtrl.reset('SelectNetwork')
       } else {
-        RouterCtrl.reset('ConnectWallet')
+        RouterCtrl.reset('Login')
       }
 
       // Open modal if essential async data is ready

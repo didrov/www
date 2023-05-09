@@ -1,3 +1,4 @@
+import type { Session, User } from '@supabase/gotrue-js/src/lib/types'
 import type { Chain, EthereumClient } from '@web3modal/ethereum'
 
 export interface MobileWallet {
@@ -306,5 +307,7 @@ export interface EventsCtrlState {
 }
 
 export interface VerificationCtrlState {
-  email?: string
+  email: string
+  session?: Session
+  user?: User
 }
