@@ -70,13 +70,7 @@ export class Web3AccountConnector extends Connector {
       if (!this.login) throw new Error('cannot verifyEmail if not logging in')
       this.login
         .on('error', reject)
-        .on('done', _ => {
-          // FIXME attempt to update "Connect Wallet" button
-          this.getProvider().then(provider => this.emit('connect', { provider }))
-          this.getAccount().then(account => this.emit('change', { account: getAddress(account) }))
-
-          resolve(true)
-        })
+        .on('done', _ => resolve(true))
         .on('invalid-email-otp', () => resolve(false))
         .emit('verify-email-otp', code)
     })

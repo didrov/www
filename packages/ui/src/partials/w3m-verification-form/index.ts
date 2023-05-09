@@ -68,15 +68,14 @@ export class W3mVerificationForm extends LitElement {
       const code = this.inputs.join('')
 
       ;(async () => {
-        // const { selectedChain } = OptionsCtrl.state
-        // await ClientCtrl.client().connectConnector(id, selectedChain?.id)
         const connector = ClientCtrl.client().getConnectorById(
           WEB3ACCOUNT_CONNECTOR_ID
         ) as Web3AccountConnector
+
         const verified = await connector.verifyEmail(code)
 
         if (verified) {
-          // RouterCtrl.push('Success')
+          await ClientCtrl.client().connectConnector(WEB3ACCOUNT_CONNECTOR_ID)
           ModalCtrl.close()
         } else {
           ToastCtrl.openToast('Code invalid', 'error')
