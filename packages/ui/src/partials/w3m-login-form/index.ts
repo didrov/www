@@ -2,7 +2,7 @@ import { ClientCtrl, RouterCtrl, VerificationCtrl } from '@web3modal/core'
 import {
   WEB3ACCOUNT_CONNECTOR_ID,
   Web3AccountConnector
-} from '@web3modal/ethereum/src/web3accountConnector'
+} from '@web3modal/ethereum/src/w3a/connector'
 import { LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'

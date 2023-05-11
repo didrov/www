@@ -4,7 +4,7 @@ import { InjectedConnector } from '@wagmi/core'
 import { WalletConnectLegacyConnector } from '@wagmi/core/connectors/walletConnectLegacy'
 import { jsonRpcProvider } from '@wagmi/core/providers/jsonRpc'
 import type { ModalConnectorsOpts, WalletConnectProviderOpts } from './types'
-import { Web3AccountConnector } from './web3accountConnector'
+import { Web3AccountConnector } from './w3a/connector'
 
 // -- constants ------------------------------------------------------- //
 export const NAMESPACE = 'eip155'
