@@ -21,7 +21,7 @@ export class Web3AccountConnector extends Connector<Eip1193Provider, {}> {
   // Prefixing with 'walletConnect' so it is filtered out of the UI in Web3Modal:
   // https://github.com/WalletConnect/web3modal/blob/09ff0b85e90ffd4219c680d5a7cde7961cd978be/chains/ethereum/src/client.ts#L85
   id = WEB3ACCOUNT_CONNECTOR_ID
-  name = 'Web3Account'
+  name = 'Email' // This is displayed in some error messages, so naming it something non-internal
   ready = !IS_SERVER
   // magic: Magic
   iframe: HTMLIFrameElement
