@@ -1,4 +1,8 @@
-import { RouterCtrl, VerificationCtrl, supabase } from '@web3modal/core'
+import { ClientCtrl, ModalCtrl, ToastCtrl } from '@web3modal/core'
+import {
+  WEB3ACCOUNT_CONNECTOR_ID,
+  Web3AccountConnector
+} from '@web3modal/ethereum/src/web3accountConnector'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ThemeUtil } from '../../utils/ThemeUtil'
@@ -60,17 +64,24 @@ export class W3mVerificationForm extends LitElement {
 
     const canTest = this.inputs.every(isNotEmpty)
     if (canTest) {
-      const token = this.inputs.join('')
-      const { data, error } = await supabase.auth.verifyOtp({
-        email: VerificationCtrl.state.email,
-        token,
-        type: 'email'
-      })
-      if (error) {
-        this.status = 'error'
-      } else if (data.session && data.user) {
-        RouterCtrl.push('Success')
-      }
+      const code = this.inputs.join('')
+
+      ;(async () => {
+        // const { selectedChain } = OptionsCtrl.state
+        // await ClientCtrl.client().connectConnector(id, selectedChain?.id)
+        const connector = ClientCtrl.client().getConnectorById(
+          WEB3ACCOUNT_CONNECTOR_ID
+        ) as Web3AccountConnector
+        const verified = await connector.verifyEmail(code)
+
+        if (verified) {
+          // RouterCtrl.push('Success')
+          ModalCtrl.close()
+        } else {
+          ToastCtrl.openToast('Code invalid', 'error')
+          this.status = 'error'
+        }
+      })()
     }
   }
 

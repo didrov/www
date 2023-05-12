@@ -17,6 +17,7 @@ export class W3mInput extends LitElement {
   @property() public valid? = undefined
 
   @property() public error? = undefined
+  @property() public status? = ''
   @property() public onInput: () => void = () => null
   @property() public onBlur: () => void = () => null
   @property() public onKeypress: () => void = () => null
@@ -29,7 +30,11 @@ export class W3mInput extends LitElement {
         @blur=${this.onBlur}
         @keypress=${this.onKeypress}
         type=${this.type}
-        class=${this.error !== '' ? 'error-border' : this.valid ? 'valid-border' : ''}
+        class=${this.error !== ''
+          ? 'error-border'
+          : this.status === 'success'
+          ? 'valid-border'
+          : ''}
         required
       />
 

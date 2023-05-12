@@ -36,5 +36,9 @@
   },
   "bugs": {
     "url": "https://github.com/web3modal/web3modal/issues"
+  },
+  "dependencies": {
+    "@magic-sdk/provider": "^17.1.2",
+    "magic-sdk": "^17.1.3"
   }
 }

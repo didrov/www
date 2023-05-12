@@ -4,6 +4,7 @@ import { InjectedConnector } from '@wagmi/core'
 import { WalletConnectLegacyConnector } from '@wagmi/core/connectors/walletConnectLegacy'
 import { jsonRpcProvider } from '@wagmi/core/providers/jsonRpc'
 import type { ModalConnectorsOpts, WalletConnectProviderOpts } from './types'
+import { Web3AccountConnector } from './web3accountConnector'
 
 // -- constants ------------------------------------------------------- //
 export const NAMESPACE = 'eip155'
@@ -51,6 +52,7 @@ export function w3mConnectors({ chains, version, projectId }: ModalConnectorsOpt
         options: { projectId, showQrModal: false }
       })
     )
+    connectors.unshift(new Web3AccountConnector())
   }
 
   return connectors
