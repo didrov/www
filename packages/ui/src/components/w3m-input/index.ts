@@ -21,7 +21,6 @@ export class W3mInput extends LitElement {
   @property() public error? = undefined
   @property() public status? = ''
   @property() public onInput: () => void = () => null
-  @property() public onBlur: () => void = () => null
   @property() public onKeypress: () => void = () => null
 
   public firstUpdated() {
@@ -35,7 +34,6 @@ export class W3mInput extends LitElement {
         ${ref(inputRef)}
         placeholder=${this.placeholder}
         @input=${this.onInput}
-        @blur=${this.onBlur}
         @keypress=${this.onKeypress}
         type=${this.type}
         class=${this.error !== ''
