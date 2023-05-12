@@ -85,11 +85,11 @@ export class W3mModalRouter extends LitElement {
       case 'InstallWallet':
         return html`<w3m-install-wallet-view></w3m-install-wallet-view>`
       case 'Login':
-        return html`<w3m-login-view></w3m-login-view>`
-      case 'Verification':
-        return html`<w3m-verification-view></w3m-verification-view>`
-      case 'Success':
-        return html`<w3m-success-view></w3m-success-view>`
+        return html`<w3a-login-view></w3a-login-view>`
+      case 'Otp':
+        return html`<w3a-otp-view></w3a-otp-view>`
+      case 'Offboard':
+        return html`<w3a-offboard-view></w3a-offboard-view>`
       default:
         return html`<div>Not Found</div>`
     }

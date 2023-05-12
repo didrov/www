@@ -2,10 +2,12 @@
 /* eslint-disable no-negated-condition */
 import { html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { createRef, ref } from 'lit/directives/ref.js'
 import { ThemeUtil } from '../../utils/ThemeUtil'
 import styles from './styles.css'
-
 type Type = 'email' | 'text'
+
+const inputRef = createRef()
 
 @customElement('w3m-input')
 export class W3mInput extends LitElement {
@@ -22,9 +24,15 @@ export class W3mInput extends LitElement {
   @property() public onBlur: () => void = () => null
   @property() public onKeypress: () => void = () => null
 
+  public firstUpdated() {
+    const element = inputRef?.value as HTMLInputElement
+    element.focus()
+  }
+
   // -- render ------------------------------------------------------- //
   protected render() {
     return html`<input
+        ${ref(inputRef)}
         placeholder=${this.placeholder}
         @input=${this.onInput}
         @blur=${this.onBlur}

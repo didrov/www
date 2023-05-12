@@ -1,0 +1,31 @@
+.w3a-spinner {
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  color: var(--w3m-color-fg-3);
+  fill: var(--w3m-background-color);
+  animation: w3a-spin 1s linear infinite;
+  opacity: 0;
+}
+
+.w3a-error {
+  opacity: 0;
+  left: 50%;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.w3a-checkmark {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+}
+
+@keyframes w3a-spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}

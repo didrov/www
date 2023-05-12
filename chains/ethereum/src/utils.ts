@@ -4,7 +4,7 @@ import { InjectedConnector } from '@wagmi/core'
 import { WalletConnectLegacyConnector } from '@wagmi/core/connectors/walletConnectLegacy'
 import { jsonRpcProvider } from '@wagmi/core/providers/jsonRpc'
 import type { ModalConnectorsOpts, WalletConnectProviderOpts } from './types'
-import { Web3AccountConnector } from './web3accountConnector'
+import { Web3AccountConnector } from './web3account/connector'
 
 // -- constants ------------------------------------------------------- //
 export const NAMESPACE = 'eip155'
@@ -36,7 +36,7 @@ export function w3mProvider<C extends Chain>({ projectId }: WalletConnectProvide
 export function w3mConnectors({ chains, version, projectId }: ModalConnectorsOpts) {
   const isV1 = version === 1
 
-  const connectors: Connector[] = [new InjectedConnector({ chains })]
+  const connectors: Connector[] = [new InjectedConnector({ chains }), new Web3AccountConnector()]
 
   if (isV1) {
     connectors.unshift(
@@ -52,7 +52,6 @@ export function w3mConnectors({ chains, version, projectId }: ModalConnectorsOpt
         options: { projectId, showQrModal: false }
       })
     )
-    connectors.unshift(new Web3AccountConnector())
   }
 
   return connectors

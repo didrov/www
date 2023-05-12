@@ -1,0 +1,66 @@
+.w3a-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 10px;
+  margin-top: 24px;
+}
+
+.w3a-otp-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 24px;
+  align-items: center;
+}
+
+.item {
+  width: 40px;
+  height: 48px;
+  background-color: var(--w3m-color-primary);
+  color: var(--w3m-color-secondary);
+  border-radius: 14px;
+  border: 2px solid var(--w3m-color-fg-2);
+  transition: 300ms border-color;
+}
+
+input[type='number'] {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  padding: 0px;
+  text-align: center;
+
+  font-family: var(--w3m-font-family);
+  font-weight: var(--w3m-text-medium-regular-weight);
+  font-size: var(--w3m-text-medium-regular-size);
+  line-height: var(--w3m-text-medium-regular-line-height);
+  letter-spacing: var(--w3m-text-medium-regular-letter-spacing);
+  text-transform: var(--w3m-text-medium-regular-text-transform);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  border: 2px solid var(--w3m-background-color);
+}
+
+input::placeholder {
+  opacity: 0;
+}
+
+input:not(:placeholder-shown) {
+  border: 2px solid var(--w3m-background-color);
+}
+
+.success {
+  border: 2px solid #2bee6c !important;
+}
+
+.error {
+  border: 2px solid #f05142 !important;
+}
