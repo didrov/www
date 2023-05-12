@@ -12,7 +12,6 @@ export class W3aSdk {
   iframe: HTMLIFrameElement
   iframeMsgIndex = 0 // unique number for every sent message so that replies can be subscribed to via a new message handler
   inited = false
-  // login: ReturnType<AuthModule['loginWithEmailOTP']> | null = null
 
   // iframe ready state
   iframeReady = false
