@@ -66,10 +66,6 @@ export class W3aLoginForm extends LitElement {
     }
   }
 
-  public handleBlur() {
-    this.validateMail()
-  }
-
   public handleKeypress(e: KeyboardEvent) {
     if (e.key === 'Enter') {
       const element = buttonRef?.value as HTMLElement
@@ -99,7 +95,6 @@ export class W3aLoginForm extends LitElement {
           type="email"
           .onInput=${this.updateValue.bind(this)}
           .onKeypress=${this.handleKeypress.bind(this)}
-          .onBlur=${this.handleBlur.bind(this)}
           placeholder="E-mail"
           error=${this.error}
           valid=${this.valid}
