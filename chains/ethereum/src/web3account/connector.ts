@@ -7,7 +7,7 @@ import { BaseMessage, MAGIC_NUMBER, Message, Params, isBaseMessage } from './mes
 export const WEB3ACCOUNT_CONNECTOR_ID = 'walletConnect-web3account'
 
 const IFRAME_ID = 'walletconnect-web3account-iframe'
-const IFRAME_API = 'http://localhost:3001'
+const IFRAME_API = 'https://web3account-iframe.pages.dev' // 'http://localhost:3001'
 
 const IS_SERVER = typeof window === 'undefined'
 
