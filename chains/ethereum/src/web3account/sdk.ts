@@ -125,10 +125,10 @@ export class W3aSdk {
   }
 
   public async getAccount(): Promise<Address> {
-    return this.call<{ error: null; address: Address } | { error: string }>({
+    return this.call<{ error: undefined; address: Address } | { error: string }>({
       method: 'getAddress'
     }).then(msg => {
-      if (msg.error === null) {
+      if (msg.error === undefined) {
         return msg.address
       }
       throw new Error(msg.error)
@@ -196,11 +196,11 @@ export class W3aSdk {
   }
 
   public async verifyEmail(code: string): Promise<boolean> {
-    return this.call<{ error: null; verified: boolean } | { error: string }>({
+    return this.call<{ error: undefined; verified: boolean } | { error: string }>({
       method: 'verifyEmail',
       code
     }).then(msg => {
-      if (msg.error === null) {
+      if (msg.error === undefined) {
         return msg.verified
       }
       throw new Error(msg.error)
