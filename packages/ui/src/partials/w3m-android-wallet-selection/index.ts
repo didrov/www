@@ -16,8 +16,8 @@ export class W3mAndroidWalletSelection extends LitElement {
     RouterCtrl.push('Qrcode')
   }
 
-  private onGetWallet() {
-    RouterCtrl.push('GetWallet')
+  private onLogin() {
+    RouterCtrl.push('Login')
   }
 
   // -- render ------------------------------------------------------- //
@@ -83,9 +83,9 @@ export class W3mAndroidWalletSelection extends LitElement {
 
         <w3m-button
           variant="outline"
-          .iconRight=${SvgUtil.ARROW_UP_RIGHT_ICON}
-          .onClick=${() => this.onGetWallet()}
-          >I don't have a wallet</w3m-button
+          .iconRight=${SvgUtil.MAIL_ICON}
+          .onClick=${() => this.onLogin()}
+          >Login with e-mail</w3m-button
         >
       </w3m-info-footer>
     `

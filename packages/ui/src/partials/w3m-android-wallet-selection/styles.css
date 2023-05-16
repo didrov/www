@@ -75,6 +75,14 @@ w3m-info-footer {
   padding: 5px 0;
 }
 
+w3m-button > button > svg > rect {
+  fill: red;
+}
+
+w3m-button > button > svg > path {
+  fill: red;
+}
+
 w3m-info-footer w3m-text {
   text-align: center;
   margin-bottom: 15px;

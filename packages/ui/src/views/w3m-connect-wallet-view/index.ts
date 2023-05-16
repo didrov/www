@@ -17,14 +17,14 @@ export class W3mConnectWalletView extends LitElement {
       return html`<w3m-mobile-wallet-selection></w3m-mobile-wallet-selection>`
     }
 
-    return html`<w3m-desktop-wallet-selection></w3m-desktop-wallet-selection>`
+    return html`<w3m-desktop-wallet-selection></w3m-desktop-wallet-selection>
+      <w3a-login-email-button></w3a-login-email-button>`
   }
 
   // -- render ------------------------------------------------------- //
   protected render() {
     return html`
       ${this.viewTemplate()}
-      <w3a-login-email-button></w3a-login-email-button>
       <w3m-legal-notice></w3m-legal-notice>
     `
   }

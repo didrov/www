@@ -68,7 +68,11 @@ button:disabled {
 }
 
 .w3m-outline path {
-  fill: var(--w3m-accent-color);
+  stroke: var(--w3m-accent-color);
+}
+
+.w3m-outline rect {
+  stroke: var(--w3m-accent-color);
 }
 
 .w3m-outline:disabled {

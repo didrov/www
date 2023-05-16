@@ -10,7 +10,7 @@ export class W3aOtpView extends LitElement {
 
   // -- render ------------------------------------------------------- //
   protected render() {
-    return html`<w3m-modal-header border=${true} title="Login with email"></w3m-modal-header>
+    return html`<w3m-modal-header border=${true} title="Login with e-mail"></w3m-modal-header>
       <w3m-modal-content>
         <w3m-text variant="medium-regular">Enter the verification code</w3m-text>
         <w3m-text class="tagline" variant="small-regular" color="secondary"

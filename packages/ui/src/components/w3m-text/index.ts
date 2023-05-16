@@ -41,7 +41,7 @@ export class W3mText extends LitElement {
 
     return html`
       <span>
-        <slot class=${classMap(classes)}></slot>
+        <slot part="anim" class=${classMap(classes)}></slot>
       </span>
     `
   }
