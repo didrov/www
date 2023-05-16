@@ -1,3 +1,4 @@
+import './w3a-login-email-button'
 import './w3m-box-button'
 import './w3m-button'
 import './w3m-button-big'

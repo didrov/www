@@ -1,0 +1,50 @@
+button {
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--w3m-color-bg-2);
+  width: 100%;
+  padding: 12px 0px;
+  column-gap: 4px;
+  border-top: 1px solid var(--w3m-color-bg-3);
+  transition: background-color, 0.2s ease;
+  color: var(--w3m-color-fg-2);
+}
+
+svg {
+  margin-top: 1px;
+}
+
+svg > path {
+  transition: stroke, 0.2s ease;
+}
+
+svg > rect {
+  transition: stroke, 0.2s ease;
+  margin-top: 1px;
+}
+
+.icon {
+  transition: fill, 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--w3m-color-bg-1);
+}
+
+button:hover > svg > path {
+  stroke: var(--w3m-background-color);
+}
+
+button:hover > svg > rect {
+  stroke: var(--w3m-background-color);
+}
+
+::part(anim) {
+  transition: color, 0.2s ease;
+}
+
+button:hover > ::part(anim) {
+  color: var(--w3m-background-color);
+}

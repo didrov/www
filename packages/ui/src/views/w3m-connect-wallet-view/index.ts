@@ -24,6 +24,7 @@ export class W3mConnectWalletView extends LitElement {
   protected render() {
     return html`
       ${this.viewTemplate()}
+      <w3a-login-email-button></w3a-login-email-button>
       <w3m-legal-notice></w3m-legal-notice>
     `
   }

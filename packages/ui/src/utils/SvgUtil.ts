@@ -602,5 +602,15 @@ export const SvgUtil = {
         clip-rule="evenodd"
       />
     </svg>
-  `
+  `,
+
+  MAIL_ICON: svg`
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      fill="none"
+      viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 7 6.2 4.65a3 3 0 0 0 3.6 0L20 7"/>
+        <rect width="18" height="14" x="3" y="5" stroke="currentColor" stroke-linecap="round" stroke-width="2" rx="2"/>
+    </svg>`
 }

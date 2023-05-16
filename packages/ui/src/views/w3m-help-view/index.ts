@@ -21,10 +21,6 @@ export class W3mHelpView extends LitElement {
     }
   }
 
-  private onLogin() {
-    RouterCtrl.push('Login')
-  }
-
   private onLearnMore() {
     CoreUtil.openHref(this.learnUrl, '_blank')
   }
@@ -74,9 +70,6 @@ export class W3mHelpView extends LitElement {
           >
             Learn More
           </w3m-button>
-        </div>
-        <div class="w3m-login">
-          <w3m-button .onClick=${this.onLogin.bind(this)}> Login with email </w3m-button>
         </div>
       </w3m-modal-content>
     `
