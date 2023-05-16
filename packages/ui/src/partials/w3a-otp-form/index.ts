@@ -73,7 +73,7 @@ export class W3aOtpForm extends LitElement {
       WEB3ACCOUNT_CONNECTOR_ID
     ) as Web3AccountConnector
 
-    const verified = await connector.verifyEmail(code)
+    const verified = await connector.sdk.verifyEmail(code)
 
     if (verified) {
       this.handleSuccess()

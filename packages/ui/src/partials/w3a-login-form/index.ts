@@ -26,7 +26,7 @@ export class W3aLoginForm extends LitElement {
           WEB3ACCOUNT_CONNECTOR_ID
         ) as Web3AccountConnector
         try {
-          await connector.sendEmailVerification(this.email)
+          await connector.sdk.sendEmailVerification(this.email)
         } catch (error) {
           this.handleError()
         }

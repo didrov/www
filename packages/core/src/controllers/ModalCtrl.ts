@@ -53,7 +53,7 @@ export const ModalCtrl = {
 
         return
       } else {
-        RouterCtrl.reset('Login')
+        RouterCtrl.reset('ConnectWallet')
       }
 
       // Open modal if essential async data is ready
