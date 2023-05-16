@@ -19,12 +19,12 @@ export class W3aLoginEmailButton extends LitElement {
   // -- render ------------------------------------------------------- //
   protected render() {
     return html`
-      <button @click=${this.onClick} class="button">
-        ${SvgUtil.MAIL_ICON}
-        <w3m-text variant="medium-regular" color="secondary" class="test">
-          Login with e-mail</w3m-text
-        >
-      </button>
+      <div class="w3m-container">
+        <button @click=${this.onClick} class="button">
+          ${SvgUtil.MAIL_ICON}
+          <w3m-text variant="medium-regular" color="secondary"> Login with e-mail</w3m-text>
+        </button>
+      </div>
     `
   }
 }

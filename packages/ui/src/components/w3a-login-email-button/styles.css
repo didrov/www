@@ -1,14 +1,17 @@
+.w3m-container {
+  width: 100%;
+  background: var(--w3m-color-bg-2);
+  border-top: 1px solid var(--w3m-color-bg-3);
+  transition: background-color, 0.2s ease;
+}
+
 button {
-  width: 100;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: var(--w3m-color-bg-2);
   width: 100%;
   padding: 12px 0px;
   column-gap: 4px;
-  border-top: 1px solid var(--w3m-color-bg-3);
-  transition: background-color, 0.2s ease;
   color: var(--w3m-color-fg-2);
 }
 
@@ -29,15 +32,15 @@ svg > rect {
   transition: fill, 0.2s ease;
 }
 
-button:hover {
+.w3m-container:hover {
   background-color: var(--w3m-color-bg-1);
 }
 
-button:hover > svg > path {
+.w3m-container:hover > button > svg > path {
   stroke: var(--w3m-background-color);
 }
 
-button:hover > svg > rect {
+.w3m-container:hover > button > svg > rect {
   stroke: var(--w3m-background-color);
 }
 
