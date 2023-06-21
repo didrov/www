@@ -21,6 +21,7 @@ export default function WithEthereumProvider() {
       methods: ['eth_sendTransaction', 'personal_sign'],
       events: ['connect', 'disconnect']
     })
+    console.log('EthereumProvider.accounts post-init:', client.accounts)
     if (client.session) {
       setSession(true)
     }
@@ -33,6 +34,7 @@ export default function WithEthereumProvider() {
         await providerClient.connect()
         setSession(true)
         NotificationCtrl.open('Connect', JSON.stringify(providerClient.session, null, 2))
+        console.log('EthereumProvider.accounts post-connect:', providerClient.accounts)
       } catch (error) {
         const message = getErrorMessage(error)
         showErrorToast(message)
