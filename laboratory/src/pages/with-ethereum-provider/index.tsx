@@ -12,6 +12,14 @@ export default function WithEthereumProvider() {
   const [session, setSession] = useState<boolean>(false)
   const [disconnecting, setDisconnecting] = useState<boolean>(false)
 
+  useEffect(() => {
+    if (providerClient) {
+      providerClient.on('accountsChanged', (accounts: string[]) => {
+        console.log('EthereumProvider.accountsChanged:', accounts)
+      });
+    }
+  }, [providerClient])
+
   async function onInitializeProviderClient() {
     const client = await EthereumProvider.init({
       projectId: getProjectId(),
@@ -19,7 +27,8 @@ export default function WithEthereumProvider() {
       qrModalOptions: { themeMode: getTheme(), chainImages: true },
       chains: [1],
       methods: ['eth_sendTransaction', 'personal_sign'],
-      events: ['connect', 'disconnect']
+      events: ['connect', 'disconnect'],
+      optionalChains: [137]
     })
     console.log('EthereumProvider.accounts post-init:', client.accounts)
     if (client.session) {
